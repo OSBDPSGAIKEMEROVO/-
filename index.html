@@ -5,49 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ОСБ ДПС ГАИ ГУ МВД по Кемеровской области</title>
     <style>
+        /* ОБЩИЕ СТИЛИ */
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        
-        /* Шапка */
         header { background-color: #003366; color: white; padding: 10px 0; border-bottom: 3px solid #ffcc00; }
-        .container { width: 85%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        
         .logo-block { display: flex; align-items: center; }
-        .logo-block img { width: 60px; margin-right: 15px; }
-        .title { font-size: 14px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
-        .emergency { color: white; font-weight: bold; font-size: 24px; }
+        .logo-block img { width: 50px; margin-right: 12px; }
+        .title { font-size: 12px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
 
-        /* Навигация как на скрине (РАСТЯНУТАЯ) */
-        nav { background-color: #004080; padding: 15px 0; border-bottom: 1px solid #002d5a; }
-        .nav-container { 
-            width: 85%; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; /* Кнопки разлетаются по всей ширине */
-        }
-        nav a { 
-            color: white; 
-            text-decoration: none; 
-            font-size: 13px; 
-            font-weight: bold; 
-            text-transform: uppercase;
-            transition: 0.3s; 
-            cursor: pointer;
-            padding: 5px 10px;
-        }
+        nav { background-color: #004080; padding: 10px 0; border-bottom: 1px solid #002d5a; }
+        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; padding: 5px; }
         nav a:hover { color: #ffcc00; }
 
-        /* Контент */
-        main { width: 85%; margin: 20px auto; }
-        .page { display: none; gap: 20px; }
+        main { width: 90%; max-width: 1100px; margin: 20px auto; display: flex; gap: 20px; }
+        .page { display: none; width: 100%; gap: 20px; flex-direction: row; }
         .page.active { display: flex; }
 
-        .card { background: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .chief-side { flex: 1; }
-        .chief-side img { width: 100%; border-radius: 5px; border: 1px solid #ddd; }
+        .card { background: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
+        .chief-side { flex: 1; min-width: 250px; }
+        .chief-side img { width: 100%; border-radius: 5px; border: 1px solid #ddd; height: auto; }
         .content-side { flex: 2; }
 
-        h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
-        .no-news { color: #888; text-align: center; padding: 60px 0; font-style: italic; }
-        ul { padding-left: 20px; line-height: 1.6; }
+        h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 16px; }
+        .no-news { color: #888; text-align: center; padding: 40px 0; font-style: italic; }
+        .emergency { color: white; font-weight: bold; font-size: 20px; }
+
+        /* АДАПТИВНОСТЬ ПОД МОБИЛУ (Экран меньше 768px) */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; text-align: center; gap: 10px; }
+            .logo-block { flex-direction: column; }
+            .logo-block img { margin: 0 0 10px 0; width: 60px; }
+            .title { font-size: 11px; }
+            
+            .nav-container { justify-content: center; gap: 10px; }
+            nav a { font-size: 11px; padding: 5px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; }
+
+            main { margin: 10px auto; }
+            .page.active { flex-direction: column; } /* Блоки встают друг под друга */
+            
+            .chief-side { width: 100%; }
+            .content-side { width: 100%; }
+            
+            .emergency { font-size: 24px; padding: 5px; background: #d00; border-radius: 5px; width: 100%; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -64,7 +66,6 @@
 
 <nav>
     <div class="nav-container">
-        <!-- Растянутые кнопки -->
         <a onclick="showPage('main-page')">ГЛАВНАЯ</a>
         <a onclick="showPage('about-page')">ОСБ ДПС</a>
         <a onclick="showPage('activity-page')">ДЕЯТЕЛЬНОСТЬ</a>
@@ -74,7 +75,6 @@
 </nav>
 
 <main>
-    <!-- ГЛАВНАЯ (С НОВОСТЯМИ И МАЙОРОМ) -->
     <div id="main-page" class="page active">
         <div class="card chief-side">
             <h2>Руководство</h2>
@@ -87,47 +87,20 @@
         </div>
     </div>
 
-    <!-- Разделы как в прошлом варианте -->
-    <div id="about-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Об ОСБ ДПС</h2>
-            <p>Отдельный специализированный батальон ДПС — это мобильный резерв Госавтоинспекции Кузбасса.</p>
-        </div>
-    </div>
-
-    <div id="activity-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Деятельность</h2>
-            <ul>
-                <li>Обеспечение безопасности на федеральных трассах.</li>
-                <li>Сопровождение спецколонн.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="citizens-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Для граждан</h2>
-            <p>График приема: Среда с 15:00 до 18:00.</p>
-        </div>
-    </div>
-
-    <div id="contacts-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Контакты</h2>
-            <p><strong>Адрес:</strong> г. Кемерово, ул. Баумана, 59</p>
-            <p><strong>Дежурная часть:</strong> +7 (3842) 99-12-34</p>
-        </div>
-    </div>
+    <!-- Остальные страницы (оставил структуру для переключения) -->
+    <div id="about-page" class="page"><div class="card" style="width:100%;"><h2>Об ОСБ ДПС</h2><p>Элитное подразделение ГИБДД Кузбасса.</p></div></div>
+    <div id="activity-page" class="page"><div class="card" style="width:100%;"><h2>Деятельность</h2><p>Обеспечение безопасности на трассах.</p></div></div>
+    <div id="citizens-page" class="page"><div class="card" style="width:100%;"><h2>Для граждан</h2><p>Приемные часы: Среда 15:00-18:00.</p></div></div>
+    <div id="contacts-page" class="page"><div class="card" style="width:100%;"><h2>Контакты</h2><p>Кемерово, Баумана 59. Тел: +7 (3842) 99-12-34</p></div></div>
 </main>
 
 <script>
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(page => { page.classList.remove('active'); });
         document.getElementById(pageId).classList.add('active');
+        window.scrollTo(0,0); // Чтобы при переключении кидало вверх страницы
     }
 </script>
 
 </body>
 </html>
-

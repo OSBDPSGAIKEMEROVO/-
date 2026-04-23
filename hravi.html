@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОСБ ДПС ГАИ ГУ МВД по Кемеровской области</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        
+        /* Шапка */
+        header { background-color: #003366; color: white; padding: 10px 0; border-bottom: 3px solid #ffcc00; }
+        .container { width: 85%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo-block { display: flex; align-items: center; }
+        .logo-block img { width: 60px; margin-right: 15px; }
+        .title { font-size: 14px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+        .emergency { color: white; font-weight: bold; font-size: 24px; }
+
+        /* Навигация как на скрине (РАСТЯНУТАЯ) */
+        nav { background-color: #004080; padding: 15px 0; border-bottom: 1px solid #002d5a; }
+        .nav-container { 
+            width: 85%; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; /* Кнопки разлетаются по всей ширине */
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 13px; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            transition: 0.3s; 
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        nav a:hover { color: #ffcc00; }
+
+        /* Контент */
+        main { width: 85%; margin: 20px auto; }
+        .page { display: none; gap: 20px; }
+        .page.active { display: flex; }
+
+        .card { background: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .chief-side { flex: 1; }
+        .chief-side img { width: 100%; border-radius: 5px; border: 1px solid #ddd; }
+        .content-side { flex: 2; }
+
+        h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
+        .no-news { color: #888; text-align: center; padding: 60px 0; font-style: italic; }
+        ul { padding-left: 20px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo-block">
+            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб">
+            <div class="title">Министерство внутренних дел РФ<br><span>ГУ МВД по Кемеровской области — Кузбассу</span></div>
+        </div>
+        <div class="emergency">102</div>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <!-- Растянутые кнопки -->
+        <a onclick="showPage('main-page')">ГЛАВНАЯ</a>
+        <a onclick="showPage('about-page')">ОСБ ДПС</a>
+        <a onclick="showPage('activity-page')">ДЕЯТЕЛЬНОСТЬ</a>
+        <a onclick="showPage('citizens-page')">ДЛЯ ГРАЖДАН</a>
+        <a onclick="showPage('contacts-page')">КОНТАКТЫ</a>
+    </div>
+</nav>
+
+<main>
+    <!-- ГЛАВНАЯ (С НОВОСТЯМИ И МАЙОРОМ) -->
+    <div id="main-page" class="page active">
+        <div class="card chief-side">
+            <h2>Руководство</h2>
+            <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков">
+            <p><strong>Русаков Артемий Штефанович</strong><br>Майор полиции</p>
+        </div>
+        <div class="card content-side">
+            <h2>Новости подразделения</h2>
+            <div class="no-news">В данный момент новости отсутствуют.</div>
+        </div>
+    </div>
+
+    <!-- Разделы как в прошлом варианте -->
+    <div id="about-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Об ОСБ ДПС</h2>
+            <p>Отдельный специализированный батальон ДПС — это мобильный резерв Госавтоинспекции Кузбасса.</p>
+        </div>
+    </div>
+
+    <div id="activity-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Деятельность</h2>
+            <ul>
+                <li>Обеспечение безопасности на федеральных трассах.</li>
+                <li>Сопровождение спецколонн.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="citizens-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Для граждан</h2>
+            <p>График приема: Среда с 15:00 до 18:00.</p>
+        </div>
+    </div>
+
+    <div id="contacts-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Контакты</h2>
+            <p><strong>Адрес:</strong> г. Кемерово, ул. Баумана, 59</p>
+            <p><strong>Дежурная часть:</strong> +7 (3842) 99-12-34</p>
+        </div>
+    </div>
+</main>
+
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(page => { page.classList.remove('active'); });
+        document.getElementById(pageId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
+

@@ -10,7 +10,6 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
         
-        /* Шапка МВД */
         header { background-color: #003366; color: white; padding: 12px 0; border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 1000; }
         .container { width: 85%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
         .logo-block { display: flex; align-items: center; }
@@ -18,25 +17,20 @@
         .title { font-size: 14px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
         .emergency { color: white; font-weight: bold; font-size: 24px; }
 
-        /* Навигация */
         nav { background-color: #004080; padding: 15px 0; border-bottom: 1px solid #002d5a; }
         .nav-container { width: 85%; margin: 0 auto; display: flex; justify-content: space-between; }
         nav a { color: white; text-decoration: none; font-size: 13px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
         nav a:hover { color: #ffcc00; }
 
-        /* Контент */
         main { width: 85%; margin: 20px auto; min-height: 60vh; }
         .page { display: none; gap: 20px; width: 100%; }
         .page.active { display: flex; }
 
         .card { background: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
-        
-        /* Блок руководства */
         .chief-side { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 25px; }
         .person-card { border-bottom: 1px solid #eee; padding-bottom: 20px; }
         .person-card:last-child { border-bottom: none; }
         .person-card img { width: 100%; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 12px; height: auto; }
-        
         .content-side { flex: 2; }
 
         h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
@@ -44,9 +38,9 @@
         .rank { color: #d00000; font-weight: bold; text-transform: uppercase; font-size: 13px; margin: 5px 0 5px 0; }
         .post { font-size: 13px; color: #555; line-height: 1.4; margin: 0; }
 
+        /* Обновленный стиль новостей без доп. надписи */
         .news-item { border-bottom: 1px dashed #ccc; padding: 40px 0; text-align: center; color: #888; font-style: italic; }
 
-        /* Синий подвал */
         footer { background-color: #003366; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top: 3px solid #ffcc00; }
         .footer-text { font-size: 13px; margin-bottom: 10px; opacity: 0.9; }
         .footer-disclaimer { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; max-width: 800px; margin: 0 auto; line-height: 1.5; }
@@ -87,14 +81,12 @@
     <div id="main-page" class="page active">
         <div class="card chief-side">
             <h2>Руководство</h2>
-            
             <div class="person-card">
                 <img src="Снимок%20экрана%202026-04-24%20002959.png" alt="Русаков А.Ш.">
                 <p class="name">Русаков Артемий Штефанович</p>
                 <p class="rank">Майор полиции</p>
                 <p class="post">Начальник ОСБ ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу)</p>
             </div>
-
             <div class="person-card">
                 <img src="Снимок%20экрана%202026-04-24%20020620.png" alt="Солониченко Н.Е.">
                 <p class="name">Солониченко Никита Евгеньевич</p>
@@ -107,39 +99,15 @@
             <h2>Новости подразделения</h2>
             <div class="news-item">
                 <p>В данный момент актуальные новости отсутствуют.</p>
-                <p style="font-size: 12px; font-style: normal;">Информация обновится автоматически при поступлении сводок.</p>
             </div>
         </div>
     </div>
 
-    <div id="about-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Об отдельном специализированном батальоне</h2>
-            <p>ОСБ ДПС ГАИ Кузбасса — мобильное спецподразделение. Мы работаем на всей территории области, включая Кемерово и ключевые трассы региона.</p>
-        </div>
-    </div>
-
-    <div id="activity-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Деятельность</h2>
-            <p>Обеспечение безопасности, сопровождение колонн, проведение спецрейдов и повседневный надзор за порядком на дорогах.</p>
-        </div>
-    </div>
-
-    <div id="citizens-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Для граждан</h2>
-            <p>Прием руководства: каждую среду с 15:00 до 18:00 по адресу: г. Кемерово, ул. Баумана, 59.</p>
-        </div>
-    </div>
-
-    <div id="contacts-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Контакты</h2>
-            <p><strong>Дежурная часть:</strong> +7 (3842) 99-12-34</p>
-            <p><strong>Адрес:</strong> г. Кемерово, ул. Баумана, 59</p>
-        </div>
-    </div>
+    <!-- Разделы -->
+    <div id="about-page" class="page"><div class="card" style="width:100%;"><h2>Об ОСБ ДПС</h2><p>Мобильный резерв ГАИ Кузбасса. Работаем на трассах и в городах области.</p></div></div>
+    <div id="activity-page" class="page"><div class="card" style="width:100%;"><h2>Деятельность</h2><p>Обеспечение безопасности, сопровождение колонн, проведение спецрейдов.</p></div></div>
+    <div id="citizens-page" class="page"><div class="card" style="width:100%;"><h2>Для граждан</h2><p>Прием: каждую среду с 15:00 до 18:00 по адресу: г. Кемерово, ул. Баумана, 59.</p></div></div>
+    <div id="contacts-page" class="page"><div class="card" style="width:100%;"><h2>Контакты</h2><p>Дежурная часть: +7 (3842) 99-12-34. Адрес: ул. Баумана, 59.</p></div></div>
 </main>
 
 <footer>

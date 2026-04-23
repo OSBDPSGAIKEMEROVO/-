@@ -3,52 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ОСБ ДПС ГАИ ГУ МВД по Кемеровской области</title>
+    
+    <!-- По этому названию сайт найдут в Яндексе -->
+    <title>ОСБ ДПС ГАИ ГУ МВД по Кемеровской области (Кузбассу)</title>
+    <meta name="description" content="Официальный ресурс отдельного специализированного батальона ДПС ГАИ ГУ МВД РФ по Кемеровской области. Начальник — майор полиции Русаков Артемий Штефанович.">
+    <meta name="keywords" content="ОСБ ДПС, ГАИ, ГИБДД, Кузбасс, Кемерово, МВД, Русаков Артемий Штефанович, Баумана 59, патруль, полиция">
+
     <style>
-        /* ОБЩИЕ СТИЛИ */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background-color: #003366; color: white; padding: 10px 0; border-bottom: 3px solid #ffcc00; }
+        /* БАЗОВЫЕ СТИЛИ */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
+        
+        /* Шапка в стиле МВД */
+        header { background-color: #003366; color: white; padding: 12px 0; border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 1000; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
         
         .logo-block { display: flex; align-items: center; }
-        .logo-block img { width: 50px; margin-right: 12px; }
-        .title { font-size: 12px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+        .logo-block img { width: 55px; margin-right: 15px; }
+        .header-text { font-size: 13px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+        .emergency { color: white; font-weight: bold; font-size: 26px; text-shadow: 1px 1px 2px #000; }
 
-        nav { background-color: #004080; padding: 10px 0; border-bottom: 1px solid #002d5a; }
+        /* Навигация (Растянутая) */
+        nav { background-color: #004080; padding: 12px 0; border-bottom: 1px solid #002d5a; }
         .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; padding: 5px; }
+        nav a { 
+            color: white; text-decoration: none; font-size: 12px; font-weight: bold; 
+            text-transform: uppercase; transition: 0.3s; cursor: pointer; padding: 5px 8px; 
+        }
         nav a:hover { color: #ffcc00; }
 
-        main { width: 90%; max-width: 1100px; margin: 20px auto; display: flex; gap: 20px; }
-        .page { display: none; width: 100%; gap: 20px; flex-direction: row; }
+        /* Контент */
+        main { width: 90%; max-width: 1100px; margin: 20px auto; min-height: 65vh; }
+        .page { display: none; gap: 20px; width: 100%; }
         .page.active { display: flex; }
 
-        .card { background: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
-        .chief-side { flex: 1; min-width: 250px; }
-        .chief-side img { width: 100%; border-radius: 5px; border: 1px solid #ddd; height: auto; }
-        .content-side { flex: 2; }
+        /* Блоки */
+        .card { background: white; padding: 25px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); box-sizing: border-box; }
+        .left-col { flex: 1; min-width: 300px; }
+        .right-col { flex: 2; }
+        
+        .chief-photo { width: 100%; border-radius: 4px; border: 1px solid #ddd; margin-bottom: 15px; height: auto; }
+        
+        h2 { border-left: 5px solid #003366; padding-left: 15px; color: #003366; text-transform: uppercase; font-size: 18px; margin-top: 0; margin-bottom: 20px; }
+        .name { font-size: 20px; font-weight: bold; color: #003366; margin: 0; }
+        .rank { color: #cc0000; font-weight: bold; text-transform: uppercase; font-size: 14px; margin: 5px 0 15px 0; }
+        
+        .no-news { color: #888; text-align: center; padding: 50px 0; font-style: italic; border: 2px dashed #eee; border-radius: 6px; }
+        p { line-height: 1.6; font-size: 15px; text-align: justify; }
+        ul { padding-left: 20px; }
+        ul li { margin-bottom: 12px; line-height: 1.5; }
 
-        h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 16px; }
-        .no-news { color: #888; text-align: center; padding: 40px 0; font-style: italic; }
-        .emergency { color: white; font-weight: bold; font-size: 20px; }
+        .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+        .service-item { background: #f8f9fa; padding: 15px; border-radius: 4px; border-left: 4px solid #004080; }
 
-        /* АДАПТИВНОСТЬ ПОД МОБИЛУ (Экран меньше 768px) */
+        footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 35px 20px; font-size: 11px; margin-top: 50px; line-height: 1.6; }
+
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 768px) {
-            .container { flex-direction: column; text-align: center; gap: 10px; }
+            .container { flex-direction: column; text-align: center; gap: 12px; }
             .logo-block { flex-direction: column; }
-            .logo-block img { margin: 0 0 10px 0; width: 60px; }
-            .title { font-size: 11px; }
-            
-            .nav-container { justify-content: center; gap: 10px; }
-            nav a { font-size: 11px; padding: 5px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; }
-
-            main { margin: 10px auto; }
-            .page.active { flex-direction: column; } /* Блоки встают друг под друга */
-            
-            .chief-side { width: 100%; }
-            .content-side { width: 100%; }
-            
-            .emergency { font-size: 24px; padding: 5px; background: #d00; border-radius: 5px; width: 100%; text-align: center; }
+            .logo-block img { margin: 0 0 8px 0; }
+            .header-text { font-size: 11px; }
+            .nav-container { justify-content: center; gap: 8px; }
+            nav a { font-size: 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; padding: 7px; width: 45%; text-align: center; }
+            .page.active { flex-direction: column; }
+            .left-col, .right-col { width: 100%; flex: none; }
+            .service-grid { grid-template-columns: 1fr; }
+            .emergency { width: 100%; background: #c00; padding: 8px 0; border-radius: 4px; }
         }
     </style>
 </head>
@@ -57,8 +77,11 @@
 <header>
     <div class="container">
         <div class="logo-block">
-            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб">
-            <div class="title">Министерство внутренних дел РФ<br><span>ГУ МВД по Кемеровской области — Кузбассу</span></div>
+            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб МВД">
+            <div class="header-text">
+                Министерство внутренних дел Российской Федерации<br>
+                <span>ГУ МВД по Кемеровской области — Кузбассу</span>
+            </div>
         </div>
         <div class="emergency">102</div>
     </div>
@@ -66,39 +89,117 @@
 
 <nav>
     <div class="nav-container">
-        <a onclick="showPage('main-page')">ГЛАВНАЯ</a>
+        <a onclick="showPage('main-page')">Главная</a>
         <a onclick="showPage('about-page')">ОСБ ДПС</a>
-        <a onclick="showPage('activity-page')">ДЕЯТЕЛЬНОСТЬ</a>
-        <a onclick="showPage('citizens-page')">ДЛЯ ГРАЖДАН</a>
-        <a onclick="showPage('contacts-page')">КОНТАКТЫ</a>
+        <a onclick="showPage('activity-page')">Деятельность</a>
+        <a onclick="showPage('citizens-page')">Для граждан</a>
+        <a onclick="showPage('contacts-page')">Контакты</a>
     </div>
 </nav>
 
 <main>
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
     <div id="main-page" class="page active">
-        <div class="card chief-side">
+        <div class="card left-col">
             <h2>Руководство</h2>
-            <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков">
-            <p><strong>Русаков Артемий Штефанович</strong><br>Майор полиции</p>
+            <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков А.Ш." class="chief-photo">
+            <p class="name">Русаков Артемий Штефанович</p>
+            <p class="rank">Майор полиции</p>
+            <p>Начальник отдельного специализированного батальона ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу).</p>
         </div>
-        <div class="card content-side">
+        <div class="card right-col">
             <h2>Новости подразделения</h2>
-            <div class="no-news">В данный момент новости отсутствуют.</div>
+            <div class="no-news">
+                <p>В данный момент актуальные новости отсутствуют.</p>
+                <p style="font-size: 13px; font-style: normal; opacity: 0.7;">Информация обновляется ежедневно в 09:00.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Остальные страницы (оставил структуру для переключения) -->
-    <div id="about-page" class="page"><div class="card" style="width:100%;"><h2>Об ОСБ ДПС</h2><p>Элитное подразделение ГИБДД Кузбасса.</p></div></div>
-    <div id="activity-page" class="page"><div class="card" style="width:100%;"><h2>Деятельность</h2><p>Обеспечение безопасности на трассах.</p></div></div>
-    <div id="citizens-page" class="page"><div class="card" style="width:100%;"><h2>Для граждан</h2><p>Приемные часы: Среда 15:00-18:00.</p></div></div>
-    <div id="contacts-page" class="page"><div class="card" style="width:100%;"><h2>Контакты</h2><p>Кемерово, Баумана 59. Тел: +7 (3842) 99-12-34</p></div></div>
+    <!-- СТРАНИЦА ОСБ ДПС -->
+    <div id="about-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>О подразделении</h2>
+            <p><strong>ОСБ ДПС ГАИ Кузбасса</strong> — это мобильное спецподразделение, выполняющее задачи повышенной сложности. Мы работаем на всей территории Кемеровской области, включая ключевые города и федеральные магистрали Р-255 «Сибирь».</p>
+            <p>В отличие от городских отделов, батальон является резервом начальника Госавтоинспекции региона и может быть оперативно направлен в любую точку области для стабилизации дорожной обстановки.</p>
+            <p><strong>Приоритеты батальона:</strong></p>
+            <ul>
+                <li>Борьба с наиболее опасными нарушениями ПДД (выезд на встречную полосу, нетрезвое вождение).</li>
+                <li>Силовое сопровождение официальных делегаций и спецколонн.</li>
+                <li>Пресечение трансграничной преступности на федеральных трассах.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ДЕЯТЕЛЬНОСТЬ -->
+    <div id="activity-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Служебная деятельность</h2>
+            <p>Служба в ОСБ ДПС включает в себя как проведение масштабных спецопераций, так и ежедневную профилактическую работу:</p>
+            
+            <div class="service-grid">
+                <div class="service-item">
+                    <strong>Патрульная служба</strong>
+                    <p style="font-size: 13px;">Ежедневное дежурство на постах и маршрутах патрулирования в городах и на трассах области.</p>
+                </div>
+                <div class="service-item">
+                    <strong>Помощь гражданам</strong>
+                    <p style="font-size: 13px;">Оказание содействия водителям в экстренных ситуациях, особенно в зимний период на загородных дорогах.</p>
+                </div>
+                <div class="service-item">
+                    <strong>Дорожный надзор</strong>
+                    <p style="font-size: 13px;">Выявление недостатков в содержании дорог, знаков и разметки с последующим предписанием на устранение.</p>
+                </div>
+                <div class="service-item">
+                    <strong>Оформление ДТП</strong>
+                    <p style="font-size: 13px;">Оперативный выезд и фиксация дорожно-транспортных происшествий на ответственных участках.</p>
+                </div>
+            </div>
+            
+            <p>Сотрудники подразделения круглосуточно несут службу, обеспечивая бесперебойное и безопасное движение транспорта по всему региону.</p>
+        </div>
+    </div>
+
+    <!-- ДЛЯ ГРАЖДАН -->
+    <div id="citizens-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Информация для граждан</h2>
+            <p><strong>Прием граждан начальником батальона:</strong></p>
+            <p>Прием проводится каждую среду с 15:00 до 18:00 по адресу г. Кемерово, ул. Баумана, 59.</p>
+            <p>В ходе приема вы можете задать вопросы, касающиеся работы подразделения, или обжаловать действия сотрудников в установленном законом порядке.</p>
+            <p><strong>Для визита при себе необходимо иметь паспорт.</strong></p>
+        </div>
+    </div>
+
+    <!-- КОНТАКТЫ -->
+    <div id="contacts-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Контактная информация</h2>
+            <p><strong>Адрес:</strong> 650024, г. Кемерово, ул. Баумана, д. 59 (ОСБ ДПС ГАИ)</p>
+            <p><strong>Дежурная часть:</strong> +7 (3842) 99-12-34 (круглосуточно)</p>
+            <p><strong>Канцелярия:</strong> +7 (3842) 99-00-01</p>
+            <p><strong>Телефон доверия:</strong> +7 (3842) 32-70-97</p>
+            <p><strong>E-mail:</strong> osb42_kemerovo@mvd.ru (для тестовых запросов)</p>
+        </div>
+    </div>
 </main>
 
+<footer>
+    © 2026 ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу.<br>
+    <span style="opacity: 0.5; font-size: 10px; display: block; margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        НЕОФИЦИАЛЬНЫЙ РЕСУРС: Данная страница создана в рамках игрового процесса (RolePlay). Все совпадения с реальными людьми и событиями носят художественный характер. Сайт не является государственным порталом МВД РФ.
+    </span>
+</footer>
+
 <script>
+    // Магия переключения страниц без перезагрузки
     function showPage(pageId) {
-        document.querySelectorAll('.page').forEach(page => { page.classList.remove('active'); });
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
         document.getElementById(pageId).classList.add('active');
-        window.scrollTo(0,0); // Чтобы при переключении кидало вверх страницы
+        // Плавная прокрутка наверх при смене страницы
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
 

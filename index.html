@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ТА САМАЯ ИКОНКА НА ВКЛАДКЕ -->
     <link rel="icon" type="image/png" href="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png">
-
     <title>ОСБ ДПС ГАИ ГУ МВД по Кемеровской области (Кузбассу)</title>
-    <meta name="description" content="Официальная страница отдельного специализированного батальона ДПС ГАИ ГУ МВД РФ по Кемеровской области.">
-    
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
-        header { background-color: #003366; color: white; padding: 12px 0; border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 1000; }
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-        .logo-block { display: flex; align-items: center; }
-        .logo-block img { width: 55px; margin-right: 15px; }
-        .header-text { font-size: 13px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
-        .emergency { color: white; font-weight: bold; font-size: 26px; text-shadow: 1px 1px 2px #000; }
-        nav { background-color: #004080; padding: 12px 0; border-bottom: 1px solid #002d5a; }
-        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; padding: 5px 8px; }
-        nav a:hover { color: #ffcc00; }
-        main { width: 90%; max-width: 1100px; margin: 20px auto; min-height: 65vh; }
-        .page { display: none; gap: 20px; width: 100%; }
-        .page.active { display: flex; }
-        .card { background: white; padding: 25px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); box-sizing: border-box; }
-        .left-col { flex: 1; min-width: 300px; }
-        .right-col { flex: 2; }
-        .chief-photo { width: 100%; border-radius: 4px; border: 1px solid #ddd; height: auto; }
-        h2 { border-left: 5px solid #003366; padding-left: 15px; color: #003366; text-transform: uppercase; font-size: 18px; margin-top: 0; margin-bottom: 20px; }
-        .name { font-size: 20px; font-weight: bold; color: #003366; }
-        .rank { color: #cc0000; font-weight: bold; text-transform: uppercase; font-size: 14px; margin: 5px 0 15px 0; }
-        .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
-        .service-item { background: #f8f9fa; padding: 15px; border-radius: 4px; border-left: 4px solid #004080; }
-        footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 35px 20px; font-size: 11px; margin-top: 50px; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         
+        /* Синяя шапка */
+        header { background-color: #003366; color: white; padding: 10px 0; border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 1000; }
+        .container { width: 85%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        
+        .logo-block { display: flex; align-items: center; }
+        .logo-block img { width: 60px; margin-right: 15px; }
+        .title { font-size: 14px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+
+        /* Навигация (растянутая) */
+        nav { background-color: #004080; padding: 15px 0; border-bottom: 1px solid #002d5a; }
+        .nav-container { width: 85%; margin: 0 auto; display: flex; justify-content: space-between; }
+        nav a { color: white; text-decoration: none; font-size: 13px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
+        nav a:hover { color: #ffcc00; }
+
+        /* Контент */
+        main { width: 85%; margin: 20px auto; }
+        .page { display: none; gap: 20px; }
+        .page.active { display: flex; }
+
+        .card { background: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .chief-side { flex: 1; min-width: 300px; }
+        .chief-side img { width: 100%; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 15px; }
+        .content-side { flex: 2; }
+
+        h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
+        .chief-name { color: #003366; font-size: 20px; font-weight: bold; margin: 0; }
+        .rank { color: #d00000; font-weight: bold; text-transform: uppercase; font-size: 14px; margin: 5px 0 10px 0; }
+        
+        /* Старый стиль новостей */
+        .news-item { border-bottom: 1px dashed #ccc; padding: 15px 0; text-align: center; color: #888; font-style: italic; }
+        
+        .emergency { color: white; font-weight: bold; font-size: 24px; }
+
         @media (max-width: 768px) {
-            .container { flex-direction: column; text-align: center; gap: 12px; }
-            .nav-container { justify-content: center; gap: 8px; }
-            nav a { width: 45%; font-size: 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; }
+            .container, .nav-container { flex-direction: column; text-align: center; gap: 10px; }
             .page.active { flex-direction: column; }
-            .service-grid { grid-template-columns: 1fr; }
+            nav a { font-size: 11px; padding: 5px; border: 1px solid rgba(255,255,255,0.2); width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -50,8 +53,11 @@
 <header>
     <div class="container">
         <div class="logo-block">
-            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб МВД">
-            <div class="header-text">Министерство внутренних дел РФ<br><span>ГУ МВД по Кемеровской области — Кузбассу</span></div>
+            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб">
+            <div class="title">
+                Министерство внутренних дел Российской Федерации<br>
+                <span>ГУ МВД по Кемеровской области — Кузбассу</span>
+            </div>
         </div>
         <div class="emergency">102</div>
     </div>
@@ -69,55 +75,33 @@
 
 <main>
     <div id="main-page" class="page active">
-        <div class="card left-col">
+        <div class="card chief-side">
             <h2>Руководство</h2>
-            <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков А.Ш." class="chief-photo">
-            <p class="name">Русаков Артемий Штефанович</p>
+            <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков">
+            <p class="chief-name">Русаков Артемий Штефанович</p>
             <p class="rank">Майор полиции</p>
-            <p>Начальник отдельного специализированного батальона ДПС ГАИ ГУ МВД РФ по Кемеровской области.</p>
+            <p style="font-size: 14px;">Начальник отдельного специализированного батальона ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу).</p>
         </div>
-        <div class="card right-col">
-            <h2>Новости</h2>
-            <div style="color: #888; text-align: center; padding: 50px 0; font-style: italic; border: 2px dashed #eee;">Новостей пока нет.</div>
-        </div>
-    </div>
-
-    <div id="about-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>О подразделении</h2>
-            <p>ОСБ ДПС — мобильный резерв ГАИ Кузбасса. Работаем на трассах и в городах области.</p>
-        </div>
-    </div>
-
-    <div id="activity-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Деятельность</h2>
-            <div class="service-grid">
-                <div class="service-item"><strong>Патрулирование</strong><p>Ежедневная служба на дорогах.</p></div>
-                <div class="service-item"><strong>Помощь</strong><p>Поддержка водителей в пути.</p></div>
+        <div class="card content-side">
+            <h2>Новости подразделения</h2>
+            <div class="news-item">
+                <p>В данный момент новости отсутствуют.</p>
+                <p style="font-size: 12px; font-style: normal;">Информация обновится автоматически при поступлении сводок.</p>
             </div>
         </div>
     </div>
 
-    <div id="citizens-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Гражданам</h2>
-            <p>Прием: Среда 15:00 - 18:00. Адрес: Баумана, 59.</p>
-        </div>
-    </div>
-
-    <div id="contacts-page" class="page">
-        <div class="card" style="width: 100%;">
-            <h2>Контакты</h2>
-            <p>Дежурная часть: +7 (3842) 99-12-34</p>
-            <p>Адрес: г. Кемерово, ул. Баумана, 59</p>
-        </div>
-    </div>
+    <!-- Другие страницы (кратко) -->
+    <div id="about-page" class="page"><div class="card" style="width:100%;"><h2>Об ОСБ ДПС</h2><p>Мобильный резерв ГАИ Кузбасса.</p></div></div>
+    <div id="activity-page" class="page"><div class="card" style="width:100%;"><h2>Деятельность</h2><p>Обеспечение безопасности на дорогах региона.</p></div></div>
+    <div id="citizens-page" class="page"><div class="card" style="width:100%;"><h2>Для граждан</h2><p>Приемные часы: Среда 15:00-18:00.</p></div></div>
+    <div id="contacts-page" class="page"><div class="card" style="width:100%;"><h2>Контакты</h2><p>г. Кемерово, ул. Баумана, 59. Тел: +7 (3842) 99-12-34</p></div></div>
 </main>
 
 <footer>
-    © 2026 ОСБ ДПС ГАИ ГУ МВД по Кемеровской области.<br>
-    <span style="opacity: 0.5; font-size: 10px;">Неофициальный игровой ресурс (RolePlay).</span>
+    <p style="text-align: center; color: #888; font-size: 11px; margin-top: 40px;">
+        © 2026 ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу. Неофициальный игровой ресурс.
+    </p>
 </footer>
 
 <script>

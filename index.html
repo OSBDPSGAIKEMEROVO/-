@@ -31,21 +31,14 @@
         h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
         .name { color: #003366; font-size: 19px; font-weight: bold; margin: 0; }
         .rank { color: #d00000; font-weight: bold; text-transform: uppercase; font-size: 13px; margin: 5px 0 5px 0; }
-        .post { font-size: 13px; color: #555; line-height: 1.4; margin: 0; }
-        .news-article { border-bottom: 1px dashed #ccc; padding-bottom: 20px; margin-bottom: 20px; }
+        .news-article { border-bottom: 1px dashed #ccc; padding-bottom: 20px; margin-bottom: 30px; }
         .news-date { color: #888; font-size: 12px; margin-bottom: 10px; }
         .news-img { width: 100%; border-radius: 5px; margin: 15px 0; border: 1px solid #eee; }
-        .news-text { font-size: 15px; line-height: 1.6; text-align: justify; margin-bottom: 10px; }
-        .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
-        .service-item { background: #f8f9fa; padding: 15px; border-radius: 4px; border-left: 4px solid #004080; }
+        .news-text { font-size: 15px; line-height: 1.6; text-align: justify; }
         footer { background-color: #003366; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top: 3px solid #ffcc00; }
-        .footer-text { font-size: 13px; margin-bottom: 10px; opacity: 0.9; }
-        .footer-disclaimer { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; max-width: 800px; margin: 0 auto; line-height: 1.5; }
         @media (max-width: 768px) {
             .container, .nav-container { flex-direction: column; text-align: center; gap: 10px; }
             .page.active { flex-direction: column; }
-            nav a { font-size: 11px; padding: 8px; border: 1px solid rgba(255,255,255,0.2); width: 100%; box-sizing: border-box; }
-            .service-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -76,30 +69,34 @@
         <div class="card chief-side">
             <h2>Руководство</h2>
             <div class="person-card">
-                <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков А.Ш.">
+                <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков">
                 <p class="name">Русаков Артемий Штефанович</p>
                 <p class="rank">Майор полиции</p>
-                <p class="post">Начальник ОСБ ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу)</p>
             </div>
             <div class="person-card">
-                <img src="Снимок экрана 2026-04-24 020620.png" alt="Солониченко Н.Е.">
+                <img src="Снимок экрана 2026-04-24 020620.png" alt="Солониченко">
                 <p class="name">Солониченко Никита Евгеньевич</p>
                 <p class="rank">Капитан полиции</p>
-                <p class="post">Заместитель начальника ОСБ ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу)</p>
             </div>
         </div>
 
         <div class="card content-side">
             <h2>Новости подразделения</h2>
+
+            <!-- НОВОСТЬ С ПАТРУЛИРОВАНИЕМ НА ПОСТУ (НОВОЕ ФОТО) -->
+            <div class="news-article">
+                <div class="news-date">24 апреля 2026, 18:15</div>
+                <h3 style="margin: 0; color: #003366;">Будни батальона: Руководство ОСБ на посту</h3>
+                <img src="Снимок экрана 2026-04-24 181402.png" alt="Русаков на посту" class="news-img">
+                <p class="news-text">Начальник батальона майор полиции <strong>Русаков А.Ш.</strong> лично проверил несение службы на одном из ключевых постов. Совместно с капитаном полиции <strong>Солониченко Н.Е.</strong> (находится на маршруте) проведена оценка оперативной обстановки и качества проверки транспортных средств в вечернее время.</p>
+            </div>
+
+            <!-- ПРОШЛАЯ НОВОСТЬ -->
             <div class="news-article">
                 <div class="news-date">24 апреля 2026, 17:45</div>
-                <h3 style="margin: 0; color: #003366;">Взаимовыручка на дороге: руководство ОСБ ДПС пришло на помощь водителю</h3>
-                
-                <!-- ВОТ ОНО, ИСПРАВЛЕННОЕ НАЗВАНИЕ -->
-                <img src="Снимок экрана 2026-04-24 173843.png" alt="Помощь на дороге" class="news-img">
-                
-                <p class="news-text">Сегодня в ходе патрулирования городских улиц начальник батальона майор полиции <strong>Русаков А.Ш.</strong> и заместитель начальника капитан полиции <strong>Солониченко Н.Е.</strong> заметили неисправный гражданский автомобиль.</p>
-                <p class="news-text">Офицеры лично оказали помощь гражданину, отбуксировав автомобиль к обочине, что позволило избежать затора.</p>
+                <h3 style="margin: 0; color: #003366;">Взаимовыручка: офицеры помогли водителю</h3>
+                <img src="Снимок экрана 2026-04-24 173843.png" alt="Помощь" class="news-img">
+                <p class="news-text">Ранее сегодня руководство батальона помогло гражданину убрать неисправное авто с проезжей части, обеспечив безопасность движения.</p>
             </div>
         </div>
     </div>
@@ -107,25 +104,19 @@
     <!-- Разделы -->
     <div id="about-page" class="page">
         <div class="card" style="width: 100%;">
-            <h2>Об отдельном специализированном батальоне</h2>
-            <p><strong>ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу</strong> — это высокомобильное подразделение специального назначения.</p>
-            <p>Батальон обеспечивает безопасность на трассах Р-255 и в городах области, включая Кемерово.</p>
+            <h2>Об ОСБ ДПС</h2>
+            <p><strong>ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу</strong> — мобильный резерв спецназначения. Батальон работает на всей территории области, включая Кемерово и ключевые трассы региона.</p>
         </div>
     </div>
 
     <div id="activity-page" class="page">
         <div class="card" style="width: 100%;">
-            <h2>Направления деятельности</h2>
-            <div class="service-grid">
-                <div class="service-item"><strong>Патрульная служба</strong><p style="font-size: 13px;">Круглосуточный надзор за движением в городах и на трассах.</p></div>
-                <div class="service-item"><strong>Спецрейды</strong><p style="font-size: 13px;">Проведение мероприятий «Трезвый водитель» и «Встречная полоса».</p></div>
-                <div class="service-item"><strong>Помощь водителям</strong><p style="font-size: 13px;">Оказание содействия в экстренных ситуациях на дорогах.</p></div>
-                <div class="service-item"><strong>Дорожный надзор</strong><p style="font-size: 13px;">Контроль состояния проезжей части и разметки.</p></div>
-            </div>
+            <h2>Деятельность</h2>
+            <p>Обеспечение безопасности на трассах Р-255 и в городах области, патрулирование, рейды и сопровождение спецколонн.</p>
         </div>
     </div>
 
-    <div id="citizens-page" class="page"><div class="card" style="width: 100%;"><h2>Для граждан</h2><p>Прием руководства: каждую среду с 15:00 до 18:00 по адресу: Кемерово, ул. Баумана, 59.</p></div></div>
+    <div id="citizens-page" class="page"><div class="card" style="width: 100%;"><h2>Для граждан</h2><p>Прием: среду с 15:00 до 18:00 по адресу: г. Кемерово, ул. Баумана, 59.</p></div></div>
     <div id="contacts-page" class="page"><div class="card" style="width: 100%;"><h2>Контакты</h2><p>Дежурная часть: +7 (3842) 99-12-34. Адрес: ул. Баумана, 59.</p></div></div>
 </main>
 

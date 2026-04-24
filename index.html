@@ -31,14 +31,20 @@
         h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
         .name { color: #003366; font-size: 19px; font-weight: bold; margin: 0; }
         .rank { color: #d00000; font-weight: bold; text-transform: uppercase; font-size: 13px; margin: 5px 0 5px 0; }
+        
         .news-article { border-bottom: 1px dashed #ccc; padding-bottom: 20px; margin-bottom: 30px; }
+        .news-article:last-child { border-bottom: none; }
         .news-date { color: #888; font-size: 12px; margin-bottom: 10px; }
         .news-img { width: 100%; border-radius: 5px; margin: 15px 0; border: 1px solid #eee; }
         .news-text { font-size: 15px; line-height: 1.6; text-align: justify; }
+        
         footer { background-color: #003366; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top: 3px solid #ffcc00; }
+        .footer-disclaimer { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; max-width: 800px; margin: 10px auto 0 auto; line-height: 1.5; }
+
         @media (max-width: 768px) {
             .container, .nav-container { flex-direction: column; text-align: center; gap: 10px; }
             .page.active { flex-direction: column; }
+            nav a { font-size: 11px; width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.2); padding: 8px; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -83,41 +89,46 @@
         <div class="card content-side">
             <h2>Новости подразделения</h2>
 
-            <!-- НОВОСТЬ С ПАТРУЛИРОВАНИЕМ НА ПОСТУ (НОВОЕ ФОТО) -->
+            <!-- НОВОСТЬ 1: ПАТРУЛИРОВАНИЕ (ВЕРХНЯЯ) -->
             <div class="news-article">
                 <div class="news-date">24 апреля 2026, 18:15</div>
-                <h3 style="margin: 0; color: #003366;">Будни батальона: Руководство ОСБ на посту</h3>
+                <h3 style="margin: 0; color: #003366;">Личный контроль: Руководство батальона на маршрутах патрулирования</h3>
                 <img src="Снимок экрана 2026-04-24 181402.png" alt="Русаков на посту" class="news-img">
-                <p class="news-text">Начальник батальона майор полиции <strong>Русаков А.Ш.</strong> лично проверил несение службы на одном из ключевых постов. Совместно с капитаном полиции <strong>Солониченко Н.Е.</strong> (находится на маршруте) проведена оценка оперативной обстановки и качества проверки транспортных средств в вечернее время.</p>
+                <p class="news-text">Начальник ОСБ ДПС майор полиции <strong>Русаков А.Ш.</strong> совместно с заместителем капитаном полиции <strong>Солониченко Н.Е.</strong> провели инспекцию несения службы. Офицеры лично проверили оперативную обстановку на ключевых развязках города в вечернее время.</p>
             </div>
 
-            <!-- ПРОШЛАЯ НОВОСТЬ -->
+            <!-- НОВОСТЬ 2: ПОМОЩЬ (НИЖНЯЯ) -->
             <div class="news-article">
                 <div class="news-date">24 апреля 2026, 17:45</div>
-                <h3 style="margin: 0; color: #003366;">Взаимовыручка: офицеры помогли водителю</h3>
-                <img src="Снимок экрана 2026-04-24 173843.png" alt="Помощь" class="news-img">
-                <p class="news-text">Ранее сегодня руководство батальона помогло гражданину убрать неисправное авто с проезжей части, обеспечив безопасность движения.</p>
+                <h3 style="margin: 0; color: #003366;">Взаимовыручка: офицеры ОСБ помогли водителю</h3>
+                <img src="Снимок экрана 2026-04-24 173843.png" alt="Помощь на дороге" class="news-img">
+                <p class="news-text">Ранее сегодня руководство батальона пришло на помощь гражданину, чей автомобиль заглох посреди проезжей части. Офицеры вручную отбуксировали машину к обочине, предотвратив возникновение затора.</p>
             </div>
         </div>
     </div>
 
-    <!-- Разделы -->
+    <!-- Другие страницы -->
     <div id="about-page" class="page">
         <div class="card" style="width: 100%;">
-            <h2>Об ОСБ ДПС</h2>
-            <p><strong>ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу</strong> — мобильный резерв спецназначения. Батальон работает на всей территории области, включая Кемерово и ключевые трассы региона.</p>
+            <h2>Об отдельном специализированном батальоне</h2>
+            <p><strong>ОСБ ДПС ГАИ Кузбасса</strong> — мобильный резерв спецназначения. Батальон работает на всей территории области, включая Кемерово и ключевые трассы региона.</p>
         </div>
     </div>
 
     <div id="activity-page" class="page">
         <div class="card" style="width: 100%;">
             <h2>Деятельность</h2>
-            <p>Обеспечение безопасности на трассах Р-255 и в городах области, патрулирование, рейды и сопровождение спецколонн.</p>
+            <p>Обеспечение безопасности, сопровождение колонн, рейды и повседневный надзор за порядком на дорогах.</p>
         </div>
     </div>
 
-    <div id="citizens-page" class="page"><div class="card" style="width: 100%;"><h2>Для граждан</h2><p>Прием: среду с 15:00 до 18:00 по адресу: г. Кемерово, ул. Баумана, 59.</p></div></div>
-    <div id="contacts-page" class="page"><div class="card" style="width: 100%;"><h2>Контакты</h2><p>Дежурная часть: +7 (3842) 99-12-34. Адрес: ул. Баумана, 59.</p></div></div>
+    <div id="citizens-page" class="page">
+        <div class="card" style="width: 100%;"><h2>Для граждан</h2><p>Прием: среду с 15:00 до 18:00 по адресу: Кемерово, ул. Баумана, 59.</p></div>
+    </div>
+
+    <div id="contacts-page" class="page">
+        <div class="card" style="width: 100%;"><h2>Контакты</h2><p>Дежурная часть: +7 (3842) 99-12-34. Адрес: ул. Баумана, 59.</p></div>
+    </div>
 </main>
 
 <footer>

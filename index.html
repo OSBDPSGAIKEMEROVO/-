@@ -11,6 +11,7 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
         
+        /* Шапка */
         header { background-color: #003366; color: white; padding: 12px 0; border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 1000; }
         .container { width: 85%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
         .logo-block { display: flex; align-items: center; }
@@ -18,11 +19,13 @@
         .title { font-size: 14px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
         .emergency { color: white; font-weight: bold; font-size: 24px; }
 
+        /* Навигация */
         nav { background-color: #004080; padding: 15px 0; border-bottom: 1px solid #002d5a; }
         .nav-container { width: 85%; margin: 0 auto; display: flex; justify-content: space-between; }
         nav a { color: white; text-decoration: none; font-size: 13px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
         nav a:hover { color: #ffcc00; }
 
+        /* Контент */
         main { width: 85%; margin: 20px auto; min-height: 60vh; }
         .page { display: none; gap: 20px; width: 100%; }
         .page.active { display: flex; }
@@ -39,12 +42,17 @@
         .rank { color: #d00000; font-weight: bold; text-transform: uppercase; font-size: 13px; margin: 5px 0 5px 0; }
         .post { font-size: 13px; color: #555; line-height: 1.4; margin: 0; }
 
-        .news-item { border-bottom: 1px dashed #ccc; padding: 40px 0; text-align: center; color: #888; font-style: italic; }
+        /* Стили для новости */
+        .news-article { border-bottom: 1px dashed #ccc; padding-bottom: 20px; }
+        .news-date { color: #888; font-size: 12px; margin-bottom: 10px; }
+        .news-img { width: 100%; border-radius: 5px; margin: 15px 0; border: 1px solid #eee; }
+        .news-text { font-size: 15px; line-height: 1.6; text-align: justify; }
 
         /* Сетка для деятельности */
         .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
         .service-item { background: #f8f9fa; padding: 15px; border-radius: 4px; border-left: 4px solid #004080; }
 
+        /* Синий подвал */
         footer { background-color: #003366; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top: 3px solid #ffcc00; }
         .footer-text { font-size: 13px; margin-bottom: 10px; opacity: 0.9; }
         .footer-disclaimer { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; max-width: 800px; margin: 0 auto; line-height: 1.5; }
@@ -62,7 +70,7 @@
 <header>
     <div class="container">
         <div class="logo-block">
-            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб">
+            <img src="Emblem_of_the_Ministry_of_Internal_Affairs.svg.png" alt="Герб МВД">
             <div class="title">
                 Министерство внутренних дел Российской Федерации<br>
                 <span>ГУ МВД по Кемеровской области — Кузбассу</span>
@@ -102,54 +110,53 @@
 
         <div class="card content-side">
             <h2>Новости подразделения</h2>
-            <div class="news-item">
-                <p>В данный момент актуальные новости отсутствуют.</p>
+            <div class="news-article">
+                <div class="news-date">24 апреля 2026, 17:45</div>
+                <h3 style="margin: 0; color: #003366;">Взаимовыручка на дороге: руководство ОСБ ДПС пришло на помощь водителю</h3>
+                <img src="Снимок%20экрана%202026-04-24%20173843.png" alt="Помощь на дороге" class="news-img">
+                <p class="news-text">
+                    Сегодня в ходе патрулирования городских улиц начальник батальона майор полиции <strong>Русаков А.Ш.</strong> и заместитель начальника капитан полиции <strong>Солониченко Н.Е.</strong> заметили на проезжей части неисправный гражданский автомобиль, который создавал серьезную помеху для движения других транспортных средств.
+                </p>
+                <p class="news-text">
+                    Оценив ситуацию, офицеры приняли решение лично оказать помощь гражданину. Совместными усилиями сломанный автомобиль был вручную отбуксирован к обочине в безопасное место. Благодаря оперативным действиям руководства батальона, затор на данном участке дороги был предотвращен в кратчайшие сроки. Водитель выразил благодарность сотрудникам за неравнодушие и помощь в трудной ситуации.
+                </p>
             </div>
         </div>
     </div>
 
+    <!-- Подробные разделы -->
     <div id="about-page" class="page">
         <div class="card" style="width: 100%;">
             <h2>Об отдельном специализированном батальоне</h2>
             <p><strong>ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу</strong> — это высокомобильное подразделение специального назначения. Мы являемся резервом начальника Госавтоинспекции региона.</p>
             <p>Батальон обеспечивает безопасность не только на ключевых трассах региона (Р-255 «Сибирь» и Р-256), но и выполняет задачи по усилению контроля за дорожным движением в городах, включая г. Кемерово. Личный состав готов к оперативной переброске на самые сложные участки дорожной сети Кузбасса.</p>
-            <p><strong>Задачи подразделения:</strong></p>
-            <ul>
-                <li>Силовое сопровождение специальных колонн и особо важных грузов.</li>
-                <li>Пресечение правонарушений на участках с наиболее сложной оперативной обстановкой.</li>
-                <li>Борьба с трансграничной преступностью и незаконным оборотом запрещенных веществ на дорогах.</li>
-            </ul>
         </div>
     </div>
 
     <div id="activity-page" class="page">
         <div class="card" style="width: 100%;">
             <h2>Направления деятельности</h2>
-            <p>Служба в ОСБ ДПС сочетает в себе спецоперации и повседневную охрану порядка:</p>
             <div class="service-grid">
                 <div class="service-item"><strong>Патрульная служба</strong><p style="font-size: 13px;">Круглосуточный надзор за движением в городах и на федеральных трассах.</p></div>
                 <div class="service-item"><strong>Спецрейды</strong><p style="font-size: 13px;">Проведение мероприятий «Трезвый водитель», «Встречная полоса» и «Детское кресло».</p></div>
-                <div class="service-item"><strong>Помощь водителям</strong><p style="font-size: 13px;">Оказание содействия в экстренных ситуациях на загородных дорогах (поломки, мороз).</p></div>
-                <div class="service-item"><strong>Дорожный надзор</strong><p style="font-size: 13px;">Контроль состояния проезжей части, разметки и технических средств регулирования.</p></div>
+                <div class="service-item"><strong>Помощь водителям</strong><p style="font-size: 13px;">Оказание содействия в экстренных ситуациях на загородных дорогах.</p></div>
+                <div class="service-item"><strong>Дорожный надзор</strong><p style="font-size: 13px;">Контроль состояния проезжей части, разметки и знаков.</p></div>
             </div>
-            <p>Сотрудники ОСБ — это профессионалы, готовые к выполнению задач в любых погодных и оперативных условиях региона.</p>
         </div>
     </div>
 
     <div id="citizens-page" class="page">
         <div class="card" style="width: 100%;">
             <h2>Для граждан</h2>
-            <p><strong>Прием граждан начальником батальона:</strong> Каждую среду с 15:00 до 18:00.</p>
-            <p>Адрес: г. Кемерово, ул. Баумана, 59. При себе необходимо иметь документ, удостоверяющий личность.</p>
+            <p><strong>Прием граждан руководством:</strong> Каждую среду с 15:00 до 18:00 по адресу: г. Кемерово, ул. Баумана, 59.</p>
         </div>
     </div>
 
     <div id="contacts-page" class="page">
         <div class="card" style="width: 100%;">
             <h2>Контактная информация</h2>
-            <p><strong>Адрес:</strong> 650024, г. Кемерово, ул. Баумана, д. 59</p>
-            <p><strong>Дежурная часть (24/7):</strong> +7 (3842) 99-12-34</p>
-            <p><strong>Телефон доверия ГУ МВД:</strong> +7 (3842) 32-70-97</p>
+            <p><strong>Адрес:</strong> г. Кемерово, ул. Баумана, д. 59</p>
+            <p><strong>Дежурная часть:</strong> +7 (3842) 99-12-34</p>
         </div>
     </div>
 </main>
@@ -158,7 +165,7 @@
     <div class="footer-text">© 2026 ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу.</div>
     <div class="footer-disclaimer">
         НЕОФИЦИАЛЬНЫЙ РЕСУРС: Данная страница создана в рамках игрового процесса (RolePlay). 
-        Все совпадения носят художественный характер. Сайт не является государственным порталом МВД РФ.
+        Сайт не является государственным порталом МВД РФ.
     </div>
 </footer>
 
@@ -172,4 +179,3 @@
 
 </body>
 </html>
-

@@ -15,36 +15,42 @@
         .logo-block img { width: 60px; margin-right: 15px; }
         .title { font-size: 14px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
         .emergency { color: white; font-weight: bold; font-size: 24px; }
+        
         nav { background-color: #004080; padding: 15px 0; border-bottom: 1px solid #002d5a; }
         .nav-container { width: 85%; margin: 0 auto; display: flex; justify-content: space-between; }
         nav a { color: white; text-decoration: none; font-size: 13px; font-weight: bold; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
         nav a:hover { color: #ffcc00; }
+
         main { width: 85%; margin: 20px auto; min-height: 60vh; }
         .page { display: none; gap: 20px; width: 100%; }
         .page.active { display: flex; }
+
         .card { background: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
         .chief-side { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 25px; }
         .person-card { border-bottom: 1px solid #eee; padding-bottom: 20px; }
         .person-card:last-child { border-bottom: none; }
-        .person-card img { width: 100%; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 15px; }
+        .person-card img { width: 100%; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 12px; height: auto; }
+        
         .content-side { flex: 2; }
+
         h2 { border-bottom: 1px solid #003366; padding-bottom: 10px; color: #333; margin-top: 0; text-transform: uppercase; font-size: 18px; }
         .name { color: #003366; font-size: 19px; font-weight: bold; margin: 0; }
         .rank { color: #d00000; font-weight: bold; text-transform: uppercase; font-size: 13px; margin: 5px 0 5px 0; }
-        
-        /* Стили новостей */
+        .post { font-size: 13px; color: #555; line-height: 1.4; margin: 0; font-style: italic; }
+
         .news-article { border-bottom: 1px dashed #ccc; padding-bottom: 20px; margin-bottom: 30px; }
         .news-article:last-child { border-bottom: none; }
         .news-date { color: #888; font-size: 12px; margin-bottom: 10px; }
         .news-img { width: 100%; border-radius: 5px; margin: 15px 0; border: 1px solid #eee; }
         .news-text { font-size: 15px; line-height: 1.6; text-align: justify; }
-        
+
         footer { background-color: #003366; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top: 3px solid #ffcc00; }
         .footer-disclaimer { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; max-width: 800px; margin: 10px auto 0 auto; line-height: 1.5; }
 
         @media (max-width: 768px) {
             .container, .nav-container { flex-direction: column; text-align: center; gap: 10px; }
             .page.active { flex-direction: column; }
+            nav a { font-size: 11px; padding: 8px; border: 1px solid rgba(255,255,255,0.2); width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -64,7 +70,7 @@
     <div class="nav-container">
         <a onclick="showPage('main-page')">Главная</a>
         <a onclick="showPage('about-page')">ОСБ ДПС</a>
-        <a onclick="showPage police('activity-page')">Деятельность</a>
+        <a onclick="showPage('activity-page')">Деятельность</a> <!-- ТЕПЕРЬ РОБИТ -->
         <a onclick="showPage('citizens-page')">Для граждан</a>
         <a onclick="showPage('contacts-page')">Контакты</a>
     </div>
@@ -78,26 +84,28 @@
                 <img src="Снимок экрана 2026-04-24 002959.png" alt="Русаков">
                 <p class="name">Русаков Артемий Штефанович</p>
                 <p class="rank">Майор полиции</p>
+                <p class="post">Начальник ОСБ ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу)</p>
             </div>
             <div class="person-card">
                 <img src="Снимок экрана 2026-04-24 020620.png" alt="Солониченко">
                 <p class="name">Солониченко Никита Евгеньевич</p>
                 <p class="rank">Капитан полиции</p>
+                <p class="post">Заместитель начальника ОСБ ДПС ГАИ ГУ МВД РФ по Кемеровской области (Кузбассу)</p>
             </div>
         </div>
 
         <div class="card content-side">
             <h2>Новости подразделения</h2>
 
-            <!-- НОВОСТЬ 1: РУСАКОВ НА ПОСТУ -->
+            <!-- НОВОСТЬ 1 -->
             <div class="news-article">
                 <div class="news-date">24 апреля 2026, 18:20</div>
                 <h3 style="margin: 0; color: #003366;">На страже порядка: начальник батальона на нестационарном посту</h3>
                 <img src="Снимок экрана 2026-04-24 181402.png" alt="Русаков на посту" class="news-img">
-                <p class="news-text">Начальник ОСБ ДПС майор полиции <strong>Русаков А.Ш.</strong> лично принял участие в несении службы. Офицер выполнял задачи на нестационарном посту, осуществляя проверку соблюдения ПДД водителями. Совместно с ним в наряде задействован заместитель начальника капитан полиции <strong>Солониченко Н.Е.</strong></p>
+                <p class="news-text">Начальник ОСБ ДПС майор полиции <strong>Русаков А.Ш.</strong> лично принял участие в несении службы. Офицер выполнял задачи на нестационарном посту, осуществляя проверку соблюдения ПДД водителями. Совместно с ним в наряде задействован капитан полиции <strong>Солониченко Н.Е.</strong></p>
             </div>
 
-            <!-- НОВОСТЬ 2: ПОМОЩЬ ВОДИТЕЛЮ -->
+            <!-- НОВОСТЬ 2 -->
             <div class="news-article">
                 <div class="news-date">24 апреля 2026, 17:45</div>
                 <h3 style="margin: 0; color: #003366;">Взаимовыручка: офицеры батальона помогли водителю</h3>
@@ -107,11 +115,23 @@
         </div>
     </div>
 
-    <!-- Остальные страницы -->
-    <div id="about-page" class="page"><div class="card" style="width: 100%;"><h2>Об ОСБ ДПС</h2><p>Мобильный резерв ГАИ Кузбасса. Обеспечение безопасности на трассах и в городах.</p></div></div>
-    <div id="activity-page" class="page"><div class="card" style="width: 100%;"><h2>Деятельность</h2><p>Патрулирование, сопровождение колонн, рейды.</p></div></div>
-    <div id="citizens-page" class="page"><div class="card" style="width: 100%;"><h2>Для граждан</h2><p>Прием: среду с 15:00 до 18:00. г. Кемерово, ул. Баумана, 59.</p></div></div>
-    <div id="contacts-page" class="page"><div class="card" style="width: 100%;"><h2>Контакты</h2><p>Дежурная часть: +7 (3842) 99-12-34.</p></div></div>
+    <!-- Разделы -->
+    <div id="about-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Об отдельном специализированном батальоне</h2>
+            <p><strong>ОСБ ДПС ГАИ ГУ МВД России по Кемеровской области — Кузбассу</strong> — мобильный резерв спецназначения. Батальон работает на всей территории области, включая Кемерово и ключевые трассы региона.</p>
+        </div>
+    </div>
+
+    <div id="activity-page" class="page">
+        <div class="card" style="width: 100%;">
+            <h2>Деятельность</h2>
+            <p>Обеспечение безопасности, сопровождение колонн, рейды и повседневный надзор за порядком на дорогах.</p>
+        </div>
+    </div>
+
+    <div id="citizens-page" class="page"><div class="card" style="width: 100%;"><h2>Для граждан</h2><p>Прием: среду с 15:00 до 18:00 по адресу: г. Кемерово, ул. Баумана, 59.</p></div></div>
+    <div id="contacts-page" class="page"><div class="card" style="width: 100%;"><h2>Контакты</h2><p>Дежурная часть: +7 (3842) 99-12-34. Адрес: ул. Баумана, 59.</p></div></div>
 </main>
 
 <footer>
